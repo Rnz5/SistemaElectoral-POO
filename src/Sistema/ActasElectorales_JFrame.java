@@ -122,6 +122,11 @@ private DefaultTableModel modelo;
         jScrollPane8.setViewportView(jTextPane2);
 
         jToggleButton1.setText("Registrar Acta");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Regresar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -343,6 +348,54 @@ private DefaultTableModel modelo;
        
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    String mensaje = "";
+
+    if (jTextField1.getText().trim().isEmpty()) {
+        mensaje += "- Título\n";
+    }
+    if (jTextField2.getText().trim().isEmpty()) {
+        mensaje += "- Fecha\n";
+    }
+    if (jTextField3.getText().trim().isEmpty()) {
+        mensaje += "- Hora\n";
+    }
+    if (jTextField4.getText().trim().isEmpty()) {
+        mensaje += "- Lugar\n";
+    }
+    if (jTextField5.getText().trim().isEmpty()) {
+        mensaje += "- ID Mesa Electoral\n";
+    }
+    if (jTextPane1.getText().trim().isEmpty()) {
+        mensaje += "- Observaciones\n";
+    }
+    if (jTextPane3.getText().trim().isEmpty()) {
+        mensaje += "- Firma\n";
+    }
+    if (jTextPane5.getText().trim().isEmpty()) {
+        mensaje += "- Sello\n";
+    }
+    if (jTextPane4.getText().trim().isEmpty()) {
+        mensaje += "- Número de Acta\n";
+    }
+
+    if (!mensaje.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this,"Faltan completar los siguientes campos:\n" + mensaje+"Campos Incompletos");
+        return;
+    }
+    
+    String titulo = jTextField1.getText().trim();
+    String fecha = jTextField2.getText().trim();
+    String hora = jTextField3.getText().trim();
+    String lugar = jTextField4.getText().trim();
+    String idMesaStr = jTextField5.getText().trim();
+    String obs = jTextPane1.getText().trim();
+    String firma = jTextPane3.getText().trim();
+    String sello = jTextPane5.getText().trim();
+    String nActaStr = jTextPane4.getText().trim();   
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments

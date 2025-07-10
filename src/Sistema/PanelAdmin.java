@@ -12,9 +12,8 @@ import Sistema.Eleccion_JFrame;
  */
 public class PanelAdmin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PanelAdmin
-     */
+    SistemaElectoral sistema = SistemaElectoral.instancia;
+     
     public PanelAdmin() {
         initComponents();
     }
@@ -36,6 +35,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,6 +87,13 @@ public class PanelAdmin extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("Reiniciar Sistema");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,6 +117,10 @@ public class PanelAdmin extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(91, 91, 91))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,7 +141,9 @@ public class PanelAdmin extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(44, 44, 44))
         );
 
         pack();
@@ -178,6 +191,26 @@ public class PanelAdmin extends javax.swing.JFrame {
             this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        sistema.mesas = new MesaElectoral[sistema.mesas.length];
+        sistema.p_mesas = 0;
+
+        sistema.candidatos = new Candidato[sistema.candidatos.length];
+        sistema.p_candidatos = 0;
+
+        sistema.partidos = new PartidoPolitico[sistema.partidos.length];
+        sistema.p_partidos = 0;
+        
+        sistema.elecciones = new Eleccion[sistema.elecciones.length];
+        sistema.p_elecciones = 0;
+        
+        sistema.miembros = new MiembrosMesa[sistema.miembros.length];
+        sistema.p_miembros = 0;
+        
+        javax.swing.JOptionPane.showMessageDialog(null, "Sistema reiniciado correctamente.");
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -218,6 +251,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JToggleButton jToggleButton1;
