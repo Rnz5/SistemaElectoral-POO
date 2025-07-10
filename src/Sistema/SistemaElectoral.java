@@ -7,16 +7,16 @@ package Sistema;
 
 public class SistemaElectoral implements GeneradorInforme 
 {
-    private Eleccion[] elecciones;
-    private MesaElectoral[] mesas;
-    private Candidato[] candidatos;
-    private MiembrosMesa[] miembros;
-    private PartidoPolitico[] partidos;
-    private int p_elecciones;
-    private int p_mesas;
-    private int p_candidatos;
-    private int p_miembros;
-    private int p_partidos;
+    public Eleccion[] elecciones;
+    public MesaElectoral[] mesas;
+    public Candidato[] candidatos;
+    public MiembrosMesa[] miembros;
+    public PartidoPolitico[] partidos;
+    public int p_elecciones;
+    public int p_mesas;
+    public int p_candidatos;
+    public int p_miembros;
+    public int p_partidos;
 
     public SistemaElectoral() {
         elecciones = new Eleccion[100];
@@ -30,6 +30,7 @@ public class SistemaElectoral implements GeneradorInforme
         p_miembros=0;
         p_partidos=0;
     }
+    
 
     public Eleccion[] getElecciones() {
         return elecciones;
@@ -109,6 +110,13 @@ public class SistemaElectoral implements GeneradorInforme
 
     public void setP_partidos(int p_partidos) {
         this.p_partidos = p_partidos;
+    }
+    
+    public void IngresarPartido(PartidoPolitico p){
+        if(p_partidos<=partidos.length){
+            partidos[p_partidos] = p;
+            p_partidos++;
+        }
     }
     
     @Override

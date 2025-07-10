@@ -7,9 +7,9 @@ package Sistema;
 
 public class Persona 
 {
-    private String nombre;
-    private String apellido;
-    private int DNI;
+    protected String nombre;
+    protected String apellido;
+    protected int DNI;
 
     public Persona(String nombre, String apellido, int DNI) {
         this.nombre = nombre;
