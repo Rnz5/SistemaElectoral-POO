@@ -12,16 +12,23 @@ public class SistemaElectoral implements GeneradorInforme
     private Candidato[] candidatos;
     private MiembrosMesa[] miembros;
     private PartidoPolitico[] partidos;
-
-    public SistemaElectoral(Eleccion[] elecciones, MesaElectoral[] mesas, Candidato[] candidatos, MiembrosMesa[] miembros, PartidoPolitico[] partidos) {
-        this.elecciones = elecciones;
-        this.mesas = mesas;
-        this.candidatos = candidatos;
-        this.miembros = miembros;
-        this.partidos = partidos;
-    }
+    private int p_elecciones;
+    private int p_mesas;
+    private int p_candidatos;
+    private int p_miembros;
+    private int p_partidos;
 
     public SistemaElectoral() {
+        elecciones = new Eleccion[100];
+        mesas = new MesaElectoral[100];
+        candidatos = new Candidato[100];
+        miembros = new MiembrosMesa[100];
+        partidos = new PartidoPolitico[100];
+        p_elecciones=0;
+        p_mesas=0;
+        p_candidatos=0;
+        p_miembros=0;
+        p_partidos=0;
     }
 
     public Eleccion[] getElecciones() {
@@ -63,11 +70,57 @@ public class SistemaElectoral implements GeneradorInforme
     public void setPartidos(PartidoPolitico[] partidos) {
         this.partidos = partidos;
     }
+
+    public int getP_elecciones() {
+        return p_elecciones;
+    }
+
+    public void setP_elecciones(int p_elecciones) {
+        this.p_elecciones = p_elecciones;
+    }
+
+    public int getP_mesas() {
+        return p_mesas;
+    }
+
+    public void setP_mesas(int p_mesas) {
+        this.p_mesas = p_mesas;
+    }
+
+    public int getP_candidatos() {
+        return p_candidatos;
+    }
+
+    public void setP_candidatos(int p_candidatos) {
+        this.p_candidatos = p_candidatos;
+    }
+
+    public int getP_miembros() {
+        return p_miembros;
+    }
+
+    public void setP_miembros(int p_miembros) {
+        this.p_miembros = p_miembros;
+    }
+
+    public int getP_partidos() {
+        return p_partidos;
+    }
+
+    public void setP_partidos(int p_partidos) {
+        this.p_partidos = p_partidos;
+    }
     
     
     @Override
     public String generarInforme() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String informe = "Informe General del Sistema Electoral: \n";
+        informe = "Cantidad de Elecciones: "+p_elecciones+"\n"+
+                "Cantidad de Mesas: "+p_mesas+"\n"+
+                "Cantidad de Candidatos: "+p_candidatos+"\n"+
+                "Cantidad de Miembros de Mesa: "+p_miembros+"\n"+
+                "Cantidad de Partidos Politicos: "+p_partidos+"\n";
+        return informe;
     }
     
 }

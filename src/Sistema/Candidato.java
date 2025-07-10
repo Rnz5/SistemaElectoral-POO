@@ -14,9 +14,6 @@ public class Candidato extends Persona
         this.partido = partido;
     }
 
-    public Candidato() {
-    }
-
     public PartidoPolitico getPartido() {
         return partido;
     }

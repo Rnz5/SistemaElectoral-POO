@@ -16,10 +16,7 @@ public class Persona
         this.apellido = apellido;
         this.DNI = DNI;
     }
-
-    public Persona() {
-    }
-    
+ 
 
     public String getNombre() {
         return nombre;

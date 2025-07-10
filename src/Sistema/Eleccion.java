@@ -51,6 +51,7 @@ public class Eleccion extends Entidad implements GeneradorInforme
     }
     
     public String generarInforme() {
-         return "Elección tipo: " + tipoEleccion + ", fecha: " + fecha;
+         return "Tipo de Elección: " + tipoEleccion + 
+                 "\nFecha: " + fecha;
     }
 }

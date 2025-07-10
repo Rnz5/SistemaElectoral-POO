@@ -7,5 +7,5 @@ package Sistema;
 
 public interface GeneradorInforme 
 {
-    public String generarInforme();
+    String generarInforme();
 }

@@ -14,9 +14,6 @@ public class MiembrosMesa extends Persona
         this.tipo = tipo;
     }
 
-    public MiembrosMesa() {
-    }
-
     public String getTipo() {
         return tipo;
     }
