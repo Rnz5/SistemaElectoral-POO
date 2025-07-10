@@ -111,7 +111,6 @@ public class SistemaElectoral implements GeneradorInforme
         this.p_partidos = p_partidos;
     }
     
-    
     @Override
     public String generarInforme() {
         String informe = "Informe General del Sistema Electoral: \n";

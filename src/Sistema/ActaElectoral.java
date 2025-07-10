@@ -13,7 +13,7 @@ public class ActaElectoral extends Entidad
     private String lugar;
     private int idMesa;
     private MesaElectoral mesa;
-    private MiembrosMesa[] miembrosMesa;
+    private MiembrosMesa[] miembros;
     private ResultadoVoto resultados;
     private int votosBlanco;
     private int votosNulo;
@@ -21,8 +21,9 @@ public class ActaElectoral extends Entidad
     private String firmas;
     private String sello;
     private int nActa;
+    private int p_miembros;
 
-    public ActaElectoral(String titulo, String fecha, String hora, String lugar, int idMesa, MesaElectoral mesa, MiembrosMesa[] miembrosMesa, ResultadoVoto resultados, int votosBlanco, int votosNulo, String obs, String firmas, String sello, int nActa, String ID) {
+    public ActaElectoral(String titulo, String fecha, String hora, String lugar, int idMesa, MesaElectoral mesa, ResultadoVoto resultados, int votosBlanco, int votosNulo, String obs, String firmas, String sello, int nActa, String ID) {
         super(ID);
         this.titulo = titulo;
         this.fecha = fecha;
@@ -30,7 +31,6 @@ public class ActaElectoral extends Entidad
         this.lugar = lugar;
         this.idMesa = idMesa;
         this.mesa = mesa;
-        this.miembrosMesa = miembrosMesa;
         this.resultados = resultados;
         this.votosBlanco = votosBlanco;
         this.votosNulo = votosNulo;
@@ -38,6 +38,24 @@ public class ActaElectoral extends Entidad
         this.firmas = firmas;
         this.sello = sello;
         this.nActa = nActa;
+        miembros = new MiembrosMesa[100];
+        p_miembros=0;
+    }
+
+    public MiembrosMesa[] getMiembros() {
+        return miembros;
+    }
+
+    public void setMiembros(MiembrosMesa[] miembros) {
+        this.miembros = miembros;
+    }
+
+    public int getP_miembros() {
+        return p_miembros;
+    }
+
+    public void setP_miembros(int p_miembros) {
+        this.p_miembros = p_miembros;
     }
 
     public String getTitulo() {
@@ -86,14 +104,6 @@ public class ActaElectoral extends Entidad
 
     public void setMesa(MesaElectoral mesa) {
         this.mesa = mesa;
-    }
-
-    public MiembrosMesa[] getMiembrosMesa() {
-        return miembrosMesa;
-    }
-
-    public void setMiembrosMesa(MiembrosMesa[] miembrosMesa) {
-        this.miembrosMesa = miembrosMesa;
     }
 
     public ResultadoVoto getResultados() {
