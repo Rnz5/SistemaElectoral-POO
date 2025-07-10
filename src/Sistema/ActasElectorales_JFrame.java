@@ -4,6 +4,8 @@
  */
 package Sistema;
 
+import java.util.Random;
+import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -30,17 +32,6 @@ private DefaultTableModel modelo;
     }
 
     
-    private void Cargartabla1() {
-        DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
-        modelo.setRowCount(0); 
-
-        for (int i=0;i<sistema.p_miembros;i++) { 
-        Object[] fila = {
-            
-        };
-        modelo.addRow(fila);
-}
-    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -112,6 +103,11 @@ private DefaultTableModel modelo;
         jScrollPane2.setViewportView(jTable2);
 
         jButton2.setText("Mostrar Candidatos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Observaciones");
 
@@ -312,6 +308,41 @@ private DefaultTableModel modelo;
             panel.setVisible(true);
             this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        modelo.setRowCount(0);
+        int votosTotal=0;
+        int votosTotalN=0;
+        int votosTotalB=0;
+        
+        Random r = new Random();
+        for (int i=0;i<sistema.p_candidatos;i++) {
+            Candidato c = sistema.candidatos[i];
+
+            String apellido = c.getApellido();
+            PartidoPolitico partido = c.getPartido();
+
+            int votosValidos = r.nextInt(1000-100+1)+100;
+            int votosNulos = r.nextInt(50-10+1)+10;           
+            int votosBlancos = r.nextInt(25-5+1)+5; 
+            
+            votosTotal += votosValidos;
+            votosTotalN += votosNulos;
+            votosTotalB += votosBlancos;
+
+            Object[] fila = { apellido, partido.getNombre(), votosValidos, votosNulos, votosBlancos};
+            modelo.addRow(fila);
+       }
+       this.jTextPane1.setText("Se registraron un total de:"+votosTotal+" votos validos"+
+               "Un total de: "+votosTotalN+" votos nulos y finalmente un total de: "+votosTotalB+" de votos blancos");
+       
+       this.jTextPane3.setText("firmaEncargado");
+       this.jTextPane5.setText("selloCorrespondiente");
+       this.jTextPane4.setText("A-E"+r.nextInt(5000-1000+1)+1000);
+       
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
