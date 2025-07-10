@@ -13,11 +13,8 @@ public class PartidoPolitico_JFrame extends javax.swing.JFrame {
         private String sigla;
         private String nombre;
         private String logo;
-        SistemaElectoral sistema = new SistemaElectoral();
-    /**
-     * Creates new form PartidoPolitico_JFrame
-     * 
-     */
+        SistemaElectoral sistema = SistemaElectoral.instancia;
+   
     public PartidoPolitico_JFrame() {
         initComponents();
         modelo = new DefaultTableModel();

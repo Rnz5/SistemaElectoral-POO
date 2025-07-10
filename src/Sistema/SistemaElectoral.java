@@ -31,6 +31,7 @@ public class SistemaElectoral implements GeneradorInforme
         p_partidos=0;
     }
     
+    public static SistemaElectoral instancia = new SistemaElectoral();
 
     public Eleccion[] getElecciones() {
         return elecciones;
@@ -116,6 +117,34 @@ public class SistemaElectoral implements GeneradorInforme
         if(p_partidos<=partidos.length){
             partidos[p_partidos] = p;
             p_partidos++;
+        }
+    }
+    
+    public void IngresarEleccion(Eleccion e){
+        if(p_elecciones<=elecciones.length){
+            elecciones[p_elecciones] = e;
+            p_elecciones++;
+        }
+    }
+    
+    public void IngresarCandidato(Candidato c){
+        if(p_candidatos<=candidatos.length){
+            candidatos[p_candidatos] = c;
+            p_candidatos++;
+        }
+    }
+    
+    public void IngresarMiembro(MiembrosMesa mm){
+        if(p_miembros<=miembros.length){
+            miembros[p_miembros] = mm;
+            p_miembros++;
+        }
+    }
+    
+    public void IngresarMesas(MesaElectoral me){
+        if(p_mesas<=mesas.length){
+            mesas[p_mesas] = me;
+            p_mesas++;
         }
     }
     
