@@ -208,6 +208,9 @@ public class PanelAdmin extends javax.swing.JFrame {
         sistema.miembros = new MiembrosMesa[sistema.miembros.length];
         sistema.p_miembros = 0;
         
+        sistema.actas = new ActaElectoral[sistema.actas.length];
+        sistema.p_actas = 0;
+        
         javax.swing.JOptionPane.showMessageDialog(null, "Sistema reiniciado correctamente.");
     }//GEN-LAST:event_jButton5ActionPerformed
 

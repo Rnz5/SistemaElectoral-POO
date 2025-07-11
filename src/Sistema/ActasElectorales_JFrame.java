@@ -332,7 +332,7 @@ private DefaultTableModel modelo;
                 }
             }
 
-            break; // Mesa encontrada, salir del bucle
+            break; 
         }
     }
 
@@ -429,7 +429,7 @@ private DefaultTableModel modelo;
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // Recolectar datos del formulario
+
     String titulo = jTextField1.getText().trim();
     String fecha = jTextField2.getText().trim();
     String hora = jTextField3.getText().trim();
@@ -440,7 +440,7 @@ private DefaultTableModel modelo;
     String sello = jTextPane5.getText().trim();
     String nActaStr = jTextPane4.getText().trim();
 
-    // Validar campos obligatorios
+
     if (titulo.isEmpty() || fecha.isEmpty() || hora.isEmpty() || lugar.isEmpty() ||
         idMesaStr.isEmpty() || nActaStr.isEmpty()) {
         javax.swing.JOptionPane.showMessageDialog(this, "Faltan campos obligatorios.");
