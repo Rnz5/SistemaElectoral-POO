@@ -9,9 +9,10 @@ public class ResultadoVoto
 {
     private Candidato candidatos;
     private int votos;
-
-    public ResultadoVoto(Candidato candidatos, int votos) {
-        this.candidatos = candidatos;
+    private String partido;
+    
+    public ResultadoVoto(String partido, int votos){
+        this.partido = partido;
         this.votos = votos;
     }
 
@@ -32,6 +33,10 @@ public class ResultadoVoto
 
     public void setVotos(int votos) {
         this.votos = votos;
+    }
+    
+    public void Resultados(String partido, int votos){
+        
     }
     
     

@@ -11,7 +11,7 @@ public class ActaElectoral extends Entidad
     private String fecha;
     private String hora;
     private String lugar;
-    private int idMesa;
+    private String idMesa;
     private MesaElectoral mesa;
     private MiembrosMesa[] miembros;
     private ResultadoVoto resultados;
@@ -20,10 +20,10 @@ public class ActaElectoral extends Entidad
     private String obs;
     private String firmas;
     private String sello;
-    private int nActa;
+    private String nActa;
     private int p_miembros;
 
-    public ActaElectoral(String titulo, String fecha, String hora, String lugar, int idMesa, MesaElectoral mesa, ResultadoVoto resultados, int votosBlanco, int votosNulo, String obs, String firmas, String sello, int nActa, String ID) {
+    public ActaElectoral(String titulo, String fecha, String hora, String lugar, String idMesa, MesaElectoral mesa, ResultadoVoto resultados, int votosBlanco, int votosNulo, String obs, String firmas, String sello, String nActa, String ID) {
         super(ID);
         this.titulo = titulo;
         this.fecha = fecha;
@@ -90,11 +90,11 @@ public class ActaElectoral extends Entidad
         this.lugar = lugar;
     }
 
-    public int getIdMesa() {
+    public String getIdMesa() {
         return idMesa;
     }
 
-    public void setIdMesa(int idMesa) {
+    public void setIdMesa(String idMesa) {
         this.idMesa = idMesa;
     }
 
@@ -154,11 +154,11 @@ public class ActaElectoral extends Entidad
         this.sello = sello;
     }
 
-    public int getnActa() {
+    public String getnActa() {
         return nActa;
     }
 
-    public void setnActa(int nActa) {
+    public void setnActa(String nActa) {
         this.nActa = nActa;
     }
     

@@ -12,6 +12,8 @@ public class SistemaElectoral implements GeneradorInforme
     public Candidato[] candidatos;
     public MiembrosMesa[] miembros;
     public PartidoPolitico[] partidos;
+    public ActaElectoral[] actas;
+    public int p_actas;
     public int p_elecciones;
     public int p_mesas;
     public int p_candidatos;
@@ -24,6 +26,8 @@ public class SistemaElectoral implements GeneradorInforme
         candidatos = new Candidato[100];
         miembros = new MiembrosMesa[100];
         partidos = new PartidoPolitico[100];
+        actas = new ActaElectoral[100];
+        p_actas=0;
         p_elecciones=0;
         p_mesas=0;
         p_candidatos=0;
@@ -32,6 +36,22 @@ public class SistemaElectoral implements GeneradorInforme
     }
     
     public static SistemaElectoral instancia = new SistemaElectoral();
+
+    public ActaElectoral[] getActas() {
+        return actas;
+    }
+
+    public void setActas(ActaElectoral[] actas) {
+        this.actas = actas;
+    }
+
+    public int getP_actas() {
+        return p_actas;
+    }
+
+    public void setP_actas(int p_actas) {
+        this.p_actas = p_actas;
+    }
 
     public Eleccion[] getElecciones() {
         return elecciones;
@@ -145,6 +165,13 @@ public class SistemaElectoral implements GeneradorInforme
         if(p_mesas<=mesas.length){
             mesas[p_mesas] = me;
             p_mesas++;
+        }
+    }
+    
+    public void IngresarActa(ActaElectoral ae){
+        if(p_actas<=actas.length){
+            actas[p_actas] = ae;
+            p_actas++;
         }
     }
     

@@ -242,27 +242,29 @@ private DefaultTableModel modelo;
         String hora = jTextField3.getText().trim();
         String id = jTextField5.getText().trim();
 
-        MesaElectoral nuevaMesa = new MesaElectoral(lugar, fecha, hora, id);
+   
+        if (contadormiembros < 3) {
+            int faltan = 3 - contadormiembros;
+            JOptionPane.showMessageDialog(null, "Faltan " + faltan + " miembros de mesa (mínimo requerido: 3).");
+            return; 
+        }
 
+        MesaElectoral nuevaMesa = new MesaElectoral(lugar, fecha, hora, id);
 
         for (int i = 0; i < contadormiembros; i++) {
             if (miembros[i] != null) {
                 miembroslst += miembros[i].apellido + " - ";
             }
         }
+
         nuevaMesa.setP_miembros(contadormiembros);
         nuevaMesa.setMiembros(Arrays.copyOf(miembros, contadormiembros));
-        
-        nuevaMesa.setP_miembros(contadormiembros);
-
     
         sistema.IngresarMesas(nuevaMesa);
 
         JOptionPane.showMessageDialog(null, "Mesa registrada correctamente.");
 
-    
         Cargartabla();
-
 
         jTextField1.setText("");
         jTextField2.setText("");

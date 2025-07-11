@@ -17,7 +17,7 @@ public class Eleccion_JFrame extends javax.swing.JFrame {
        private String fecha;
        private String teleccion;
 
-        SistemaElectoral sistema = new SistemaElectoral();
+        SistemaElectoral sistema = SistemaElectoral.instancia;
 
     public Eleccion_JFrame() {
         initComponents();

@@ -4,7 +4,6 @@
  */
 package Sistema;
 
-import Sistema.Login;
 import Sistema.PanelAdmin;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -16,7 +15,6 @@ import javax.swing.JOptionPane;
 public class Operador extends javax.swing.JFrame {
 
     /**
-     * Creates new form Operador
      */
     public Operador() {
         initComponents();
@@ -39,7 +37,6 @@ public class Operador extends javax.swing.JFrame {
         Separador_usuario = new javax.swing.JSeparator();
         passTxt = new javax.swing.JPasswordField();
         Ingresar1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -96,13 +93,6 @@ public class Operador extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Regresar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("User: admin");
 
         jLabel2.setText("Contraseña: admin1234");
@@ -131,9 +121,7 @@ public class Operador extends javax.swing.JFrame {
                         .addContainerGap(55, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Ingresar1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(81, 81, 81))))
+                        .addGap(81, 362, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,9 +143,7 @@ public class Operador extends javax.swing.JFrame {
                 .addGap(4, 4, 4)
                 .addComponent(Separador_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Ingresar1)
-                    .addComponent(jButton2))
+                .addComponent(Ingresar1)
                 .addGap(81, 81, 81))
         );
 
@@ -209,15 +195,6 @@ public class Operador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userTxtActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        Login carmen = new Login();
-         carmen.setVisible(true);
-            this.dispose(); 
-        
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -260,7 +237,6 @@ public class Operador extends javax.swing.JFrame {
     private javax.swing.JSeparator Separador_usuario;
     private javax.swing.JLabel Usuario;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField passTxt;
